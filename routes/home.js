@@ -4,7 +4,7 @@ var authentication = require('./authentication');
 router.get('/', authentication);
 
 router.get('/', function(req, res, next) {
-  res.render('home', {
+  res.send({
       title: 'Home',
       user: req.session.user.name.toString()
   });

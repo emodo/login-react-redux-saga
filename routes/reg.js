@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const User = require('../lib/model');
 
 router.get('/', function(req, res, next) {
-  res.render('reg', { title: 'Express' });
+  res.send({ title: 'reg' });
 });
 
 

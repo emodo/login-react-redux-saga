@@ -81,17 +81,17 @@ app.use(function(err, req, res, next) {
 });
 
 app.use(function (req, res, next) {
-    res.locals.user = req.session.user;
-    var err = req.session.error;
-    var success = req.session.success;
-    delete req.session.error;
-    delete req.session.success;
-    res.locals.message = '';
-    if (err)
-        res.locals.message = '<div class="alert alert-warning">    ' + err + '</div>';
-    else if (success)
-        res.locals.message = '<div class="alert alert-success">    ' + success + '</div>';
-    next();
+  res.locals.user = req.session.user;
+  var err = req.session.error;
+  var success = req.session.success;
+  delete req.session.error;
+  delete req.session.success;
+  res.locals.message = '';
+  if (err)
+    res.locals.message = '<div class="alert alert-warning">    ' + err + '</div>';
+  else if (success)
+    res.locals.message = '<div class="alert alert-success">    ' + success + '</div>';
+  next();
 });
 
 module.exports = app;

@@ -84,7 +84,7 @@ const mapStateToProps = (state) => ({
 });
 
 Login.propTypes = {
-  dispatch: PropTypes.fun,
+  dispatch: PropTypes.func,
 };
 
 module.exports = connect(mapStateToProps)(Login);

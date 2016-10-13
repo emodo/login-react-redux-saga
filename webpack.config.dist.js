@@ -1,10 +1,8 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require("webpack");
 module.exports = {
   entry: [
     'whatwg-fetch',
     'babel-polyfill',
-    'webpack/hot/only-dev-server',
     './public/javascripts/main.js'
   ],
   output: {
@@ -26,11 +24,12 @@ module.exports = {
     test: /\.css?$/,
     loader: 'style!css'
   }]
- },
- plugins: [
-    new HtmlWebpackPlugin({
-      template: 'views/index.html',
+},
+plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
     }),
-    new webpack.HotModuleReplacementPlugin()
   ],
 };
