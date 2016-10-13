@@ -1,4 +1,4 @@
-import { takeEvery, takeLatest } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { fetchApi } from './utils';
 import * as types from './actions';
@@ -13,7 +13,7 @@ function fetchReg(action) {
 }
 
 export function* initAuth(getState, action) {
-  const { response, error } = yield call(fetchLogin, action);
+  const { response } = yield call(fetchLogin, action);
   if (response.status === 200) {
     yield put({
       type: types.LOGIN_SUCCESS,
@@ -30,7 +30,7 @@ export function* initAuth(getState, action) {
 }
 
 export function* initReg(getState, action) {
-  const { response, error } = yield call(fetchReg, action);
+  const { response } = yield call(fetchReg, action);
   if (response.status === 200) {
     yield put({
       type: types.REG_SUCCESS,
@@ -50,5 +50,5 @@ export default function* root(getState) {
   yield [
     takeLatest(types.LOG_IN, initAuth, getState),
     takeLatest(types.REG, initReg, getState),
-  ]
+  ];
 }

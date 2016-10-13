@@ -5,9 +5,9 @@ const initialState = {
   password: '',
   message: '',
   error: false,
-}
+};
 
-export default function loginApp(state=initialState, action) {
+export default function loginApp(state = initialState, action) {
   switch (action.type) {
     case types.LOG_IN:
       return Object.assign({}, state, {
