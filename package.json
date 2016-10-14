@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": " webpack-dev-server --config ./webpack.config.dev.js",
     "dist": "webpack -p --config webpack.config.dist.js",
-    "server": "export NODE_ENV=production && pm2 start app.js --name='login-react-redux-saga'",
+    "server": "export NODE_ENV=production && pm2 start ./bin/www --name='login-react'",
     "lint": "eslint public/javascripts"
   },
   "pre-commit": [
@@ -18,7 +18,9 @@
     "cookie-parser": "~1.3.5",
     "crypto": "0.0.3",
     "debug": "~2.2.0",
+    "ejs": "^2.5.2",
     "express": "~4.13.1",
+    "express-session": "^1.14.1",
     "jade": "~1.11.0",
     "mongoose": "*",
     "morgan": "~1.6.1",
@@ -26,11 +28,11 @@
     "react-dom": "*",
     "react-redux": "^4.4.5",
     "react-router": "*",
-    "redux": "*",
-    "serve-favicon": "~2.3.0",
-    "whatwg-fetch": "^1.0.0",
     "react-router-redux": "^4.0.6",
-    "redux-saga": "^0.12.0"
+    "redux": "*",
+    "redux-saga": "^0.12.0",
+    "serve-favicon": "~2.3.0",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "react-hot-loader": "^3.0.0-beta.0",
