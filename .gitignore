@@ -2,7 +2,7 @@
 .DS_Store
 .idea/
 .tags*
-
+assets/
 #library files
 node_modules
 npm-debug.log

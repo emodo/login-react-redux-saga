@@ -1,13 +1,14 @@
 var webpack = require("webpack");
+const path = require('path');
 module.exports = {
   entry: [
     'whatwg-fetch',
     'babel-polyfill',
-    './public/javascripts/main.js'
+    './public/javascripts/index.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    path: path.join(__dirname, 'assets'),
+    publicPath: '/assets',
     filename: 'app.bundle.js'
   },
   module: {
