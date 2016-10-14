@@ -14,6 +14,14 @@ router.post('/', function(req, res, next) {
     password = req.body.password,
     md5 = crypto.createHash('md5'),
     md5_password = md5.update(password).digest('hex');
+
+  if (name === '' || password === '') {
+    return res.send({
+      status: 500,
+      message:  "不能为空！"
+    });
+  }
+
   User.findOne({name: name}, function (err, user){
     if (!user) {
       req.session.error = "用户不存在！";
