@@ -3,4 +3,5 @@ webpack.config.dist.js
 devServer.js
 routes/
 lib/
+bin/
 app.js
